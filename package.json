@@ -4,6 +4,7 @@
   "description": "A simple express server example",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "jest"
   },
   "author": "Sebastian Walter",
