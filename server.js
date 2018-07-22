@@ -2,7 +2,7 @@ const express = require('express');
 const app = express()
 
 app.get('/', (req, res) => {
-    res.send('Hello OpenShift! With new naming strategy :)')
+    res.send('Hello OpenShift! Is this the final version?')
 })
 
 app.listen(3000, () => {
