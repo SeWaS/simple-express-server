@@ -2,16 +2,11 @@ language: node_js
 node_js:
   - "8"
 
-env:
-  global:
-    - COMMIT=${TRAVIS_COMMIT::7}
-
 after_success:
-  - docker login -u $DOCKER_USER -p $DOCKER_PASS
+  - docker login $REGISTRY_URL -u $REGISTRY_USER -p $REGISTRY_PASS
 
   - export APP=sewas/simple-express-server
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
-  - docker build -t $APP:$COMMIT .
-  - docker tag $APP:$COMMIT $APP:$TAG
-  - docker push $APP
+  - docker build -t $REGISTRY_URL/$APP:$TAG .
+  - docker push $REGISTRY_URL/$APP:$TAG
