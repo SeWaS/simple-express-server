@@ -10,7 +10,9 @@
   "author": "Sebastian Walter",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
     "jest": "^23.4.1"
   }
 }
